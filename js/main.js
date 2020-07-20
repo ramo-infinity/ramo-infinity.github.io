@@ -2,6 +2,7 @@
 
 const MAX_PARTICIPANTS = 5;
 const LS_PARTICIPANTS_DATA = "participantsData";
+const HOME_PAGE = "/index.html";
 
 function checkAndRegisterPartcipant() {
     let participants = localStorage.getItem(LS_PARTICIPANTS_DATA);
@@ -71,6 +72,13 @@ window.onload = function() {
     let participants = document.getElementById("participants");
     if (participants) {
         listParticipants(participants);
+    }
+
+    let home = document.getElementById("home");
+    if (home) {
+        home.onclick = (e) => {
+            location.replace(HOME_PAGE);
+        }
     }
 }
 
